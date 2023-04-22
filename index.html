@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/1176509bfa.js" crossorigin="anonymous"></script>
+  <title>ZennのバッジをFastAPI+Vercelでお手軽に作る</title>
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a  href="">
+        <div class="logo-container">
+          <img class="header-logo" src="image/b52eac9e48.png" alt="">
+          <h2 class="header-name">Zenn</h2>
+        </div>
+      </a>
+      <div class="icon-container">
+        <a class="header-icon" href=""><i class="fa-solid fa-magnifying-glass fa-lg"></i></a>
+        <a class="header-icon" href=""><i class="fa-regular fa-bell fa-lg"></i></a>
+        <a  href=""><img class="avatar" src="image/2c7527ea5e.jpeg" alt=""></a>
+        <button class="header-upload-button">投稿ボタン</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="title-container">
+    <span>📝</span>
+    <h2 class="title">Zennの2種類の執筆方法について</h2>
+    <p class="title-info">2020/09/06に公開・約1,200字</p>
+    <div class="main-container">
+  </div>
+
+  <div class="center-guide-container">
+    <div class="center-container">
+      <div class="left-heart-container">
+        <button class="like"><i class="fa-regular fa-heart fa-xl"></i></button>
+        <div>
+          <span>78</span>
+        </div>
+      </div>
+      <main>
+        <div class="content-container">
+
+          <div class="content-tag-container">
+            <a href="">
+              <div class="tag-container">
+                <img style="width: 25px;height: 25px;" src="image/b52eac9e48.png" alt="">
+                <h4>Zenn</h4>
+              </div>
+            </a>
+            <span></span>
+            <a href="">
+              <div class="tag-container">
+                <img style="width: 25px;height: 25px;" src="image/tech-icon.svg" alt="">
+                <h4>Tech</h4>
+              </div>
+            </a>
+          </div>
+
+          <br>
+          <p>このページではZennで記事や本を作成するときの執筆環境について紹介します。</p>
+          <br>
+          <br>
+          <h3>Zenn の執筆方法は 2 種類</h3>
+          <hr>
+          <p>Zennのコンテンツは次のいずれかの方法で作成します。</p>
+          <br>
+          <br>
+          <h4>1. Webエディター</h4>
+          <hr>
+          <img src="image/tb04ri7f5v9mdccsehi5jppvfpm3.png" alt="">
+          <p>ブラウザ上で動くエディターです。Zennにログインした状態で使用します。</p>
+          <details>
+            <summary>ショートカットを使用しよう</summary>
+            オンラインのmarkdownエディターでは、以下のショートカットを使用できます。<br>
+            <br>
+            Ctrl + P（プレビュー）：markdownがどのように表示されるかをチェックできます。もう一度ショートカットを実行すると、エディターに戻ります。<br>
+            Ctrl + S（内容の保存）：変更内容を保存します。<br>
+            Ctrl + I（埋め込み）：ツイートや YouTube、CodePen、SpeakerDeck などの埋め込みコンテンツを挿入するためのモーダルが表示されます。<br>
+            <br>
+            ※ Mac の場合はCtrlの代わりに⌘キーを使用します。<br>
+          </details>
+          <br>
+          <br>
+          <h4>2. ローカルのテキストエディター + CLI</h4>
+          <hr>
+          <img src="image/n0tufad6ruthuy0j2hxhffg87hpz.png" alt="">
+          <br>
+          <img src="image/ve1rve2rb3yvvcat974fxt2rftc1.png" alt="">
+          <br>
+          <p>自分の好きな環境で執筆したい方は<strong>GitHub リポジトリとの連携機能</strong>を利用することをおすすめします。リポジトリ連携をすると、特定のブランチに変更があったときに自動でコンテンツがzenn.devに反映されるようになります。</p>
+          <br>
+          <a href="">📘 Zenn と GitHub リポジトリを連携する →</a>
+          <br>
+          <p>リポジトリ連携時には、ローカルでmarkdownファイルを作成し、好きなテキストエディターで編集を行います。Zenn CLIを使うことでブラウザでプレビューしながら執筆することが可能になります。</p>
+          <a href="">📘 Zenn CLI を導入する →</a>
+          <br>
+          <hr>
+          <br>
+          <p>オンラインエディターを使う場合も、CLIを使う場合もmarkdownの書き方は変わりません。具体的な記法は下記のリンク先をご覧ください。</p>
+          <a href="">📘 Zenn のmarkdown記法 →</a>
+          <br>
+          <br>
+          <button style="display: flex; align-items: center; background-color: #fff; border: 1px solid #5c93bb2b; color: black; font-weight: 400; width: 170px;"><img style="width: 20px;" src="image/gitcat.png" alt=""><span></span> Githubで編集を提案</button>
+          <br>
+          <br>
+          <div class="action-container">
+            <div class="like-container">
+              <button class="like"><i class="fa-regular fa-heart fa-xl"></i></button>
+              <span>78</span>
+            </div>
+            <div class="report-container">
+              <i class="fa-solid fa-angle-down"></i>
+            </div>
+          </div>
+          <br>
+          <hr>
+          <div class="content-author-container">
+            <div class="author-icon-frame">
+              <img src="image/9965dabc76.jpeg" alt="">
+            </div>
+            <div class="author-info-container">
+              <h5>Zenn公式</h5>
+              <p>Zennの使い方や開発状況を発信する公式アカウントです。</p>
+              <div class="author-action-container">
+                <button class="follow">フォロー</button>
+                <span></span>
+                <span></span>
+                <a href="" class="github"><i class="fa-brands fa-github fa-lg"></i></a>
+                <span></span>
+                <a href="" class="twitter"><i class="fa-brands fa-twitter fa-lg"></i></a>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="margin"></div>
+        <div class="discussion-container">
+          <div class="discussion-heading">
+            <h4>Discussion</h4>
+            <img src="image/discussion.png" alt="">
+          </div>
+          <hr>
+          <div class="form-container">
+            <div class="editor-header">
+              <div class="editor-left">
+                <img src="image/2c7527ea5e.jpeg" alt="" class="avatar">
+                <button class="markdown">Markdown</button>
+                <button class="preview">Preview</button>
+              </div>
+              <div class="editor-right">
+                <a href="">Markdownガイド↗︎</a>
+              </div>
+            </div>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <hr>
+            <div class="editor-footer">
+              <div class="add-content">
+                <div style="margin-left: 10px;">
+                  <i class="fa-regular fa-image fa-lg"></i>
+                </div>
+                <div>
+                  <i class="fa-solid fa-plus fa-lg"></i>埋め込み
+                </div>
+              </div>
+              <button class="submit">
+                投稿する
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="guideline-info">
+          <i class="fa-solid fa-info"></i>
+          <p><a href="">コミュニティガイドライン</a>に則った投稿をしましょう。</p>
+        </div>
+
+      </main>
+
+      <span class="main-span-aside"></span>
+
+      <aside>
+        <div class="info-container">
+          <div class="info-line">
+            <div class="info-line-left">
+              <i class="fa-regular fa-user"></i>
+              <p>著者</p>
+            </div>
+            <div class="info-line-right">
+              <img src="image/9965dabc76.jpeg" alt="">
+              <p>Zenn公式</p>
+            </div>
+          </div>
+          <hr>
+          <div class="info-line">
+            <div class="info-line-left">
+              <i class="fa-regular fa-calendar"></i>
+              <p>公開</p>
+            </div>
+            <div class="info-line-right">
+              <p>2020/09/06</p>
+            </div>
+          </div>
+          <hr>
+          <div class="info-line">
+            <div class="info-line-left">
+              <i class="fa-solid fa-arrows-spin"></i>
+              <p>本文更新</p>
+            </div>
+            <div class="info-line-right">
+              <i class="fa-brands fa-github fa-lg"></i>
+              <p>2021/09/09</p>
+            </div>
+          </div>
+          <hr>
+          <div class="info-line">
+            <div class="info-line-left">
+              <i class="fa-regular fa-file"></i>
+              <p>文章量</p>
+            </div>
+            <div class="info-line-right">
+              <p>約1,200字</p>
+            </div>
+          </div>
+          <hr>
+        </div>
+
+        <div class="side-author-container">
+          <div class="side-author-small-container">
+            <img src="image/9965dabc76.jpeg" alt="">
+            <div class="author-small-right">
+              <h4>Zenn公式</h4>
+              <div class="author-action-container">
+                <button class="follow">フォロー</button>
+                <span></span>
+                <span></span>
+                <a href="" class="github"><i class="fa-brands fa-github fa-lg"></i></a>
+                <span></span>
+                <a href="" class="twitter"><i class="fa-brands fa-twitter fa-lg"></i></a>
+              </div>
+            </div>
+          </div>
+          <p>Zennの使い方や開発状況を発信する公式アカウントです。</p>
+        </div>
+
+        <!-- FIXME: JS を習得したら目次を作り直す -->
+        <div class="table-contents-container">
+          <h4>目次</h4>
+          <div class="table-container">
+            <div class="line-mark">
+              .  Zennの執筆方法は２種類<br>
+              | <br>
+              .  1. Webエディター<br>
+              | <br>
+              .  2. ローカルのテキストエディター+ CLI<br>
+
+            </div>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+
+    <div class="next-container">
+      <h3 class="next-read">Read next</h3>
+      <div class="next-read-container">
+
+        <div class="article-card">
+          <div class="article-card-left">
+            <span>📝</span>
+          </div>
+          <div class="article-card-right">
+            <a href=""><h4>Zennの記事作成にtextlintを導入した話</h4></a>
+            <div class="article-info">
+              <a href=""><img class="avatar" src="image/341a22353a.png" alt=""></a>
+              <a class="author-name" href=""><p>kohei.com</p></a>
+              <span>6日前</span>
+              <div class="article-card-like-container">
+                <button class="like"><i class="fa-regular fa-heart "></i></button>
+                <span>2</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article-card">
+          <div class="article-card-left">
+            <span>🔖</span>
+          </div>
+          <div class="article-card-right">
+            <a href=""><h4>Zennとdiff記法について</h4></a>
+            <div class="article-info">
+              <a href=""><img class="avatar" src="image/unnamed.jpg" alt=""></a>
+              <a class="author-name" href=""><p>kkiyama117</p></a>
+              <span>2021/01/28</span>
+              <div class="article-card-like-container">
+                <button class="like"><i class="fa-regular fa-heart "></i></button>
+                <span>53</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article-card">
+          <div class="article-card-left">
+            <span>🐀</span>
+          </div>
+          <div class="article-card-right">
+            <a href=""><h4>GitHub ActionsでZennブログの校正を自動化してみた</h4></a>
+            <div class="article-info">
+              <a href=""><img class="avatar" src="image/fb4d583c3c.jpeg" alt=""></a>
+              <a class="author-name" href=""><p>ユータ</p></a>
+              <span>2021/03/27</span>
+              <div class="article-card-like-container">
+                <button class="like"><i class="fa-regular fa-heart "></i></button>
+                <span>76</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article-card">
+          <div class="article-card-left">
+            <span>📚</span>
+          </div>
+          <div class="article-card-right">
+            <a href=""><h4>zenn-cli + reviewdog + textlint + GitHub Actions で執筆体験を最高にする</h4></a>
+            <div class="article-info">
+              <a href=""><img class="avatar" src="image/7a2cacc0df.jpeg" alt=""></a>
+              <a class="author-name" href=""><p>serima</p></a>
+              <span>2020/09/29</span>
+              <div class="article-card-like-container">
+                <button class="like"><i class="fa-regular fa-heart "></i></button>
+                <span>156</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article-card">
+          <div class="article-card-left">
+            <span>🌟</span>
+          </div>
+          <div class="article-card-right">
+            <a href=""><h4>Zenn や Qiita や AtCoder のバッジを生成できるサービスを公開しました</h4></a>
+            <div class="article-info">
+              <a href=""><img class="avatar" src="image/unnamed (1).jpg" alt=""></a>
+              <a class="author-name" href=""><p>koki</p></a>
+              <span>2022/10/01</span>
+              <div class="article-card-like-container">
+                <button class="like"><i class="fa-regular fa-heart "></i></button>
+                <span>156</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article-card">
+          <div class="article-card-left">
+            <span>👩🏼‍💻</span>
+          </div>
+          <div class="article-card-right">
+            <a href=""><h4>Next.js製 個人ブログに zenn-markdown-html と zenn-content-css を導入する</h4></a>
+            <div class="article-info">
+              <div class="blog-avatar">
+                <a  href=""><img class="tech-blog" src="image/6399678e6b.png" alt=""></a>
+                <a class="position-right-bottom" href=""><img class="blog-avatar" src="image/ab27ada047.png" alt=""></a>
+              </div>
+              <a class="author-name" href=""><p>waddy_u in Zenn Tech Blog</p></a>
+              <span>2021/05/28</span>
+              <div class="article-card-like-container">
+                <button class="like"><i class="fa-regular fa-heart "></i></button>
+                <span>151</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article-card">
+          <div class="article-card-left">
+            <span>🍜</span>
+          </div>
+          <div class="article-card-right">
+            <a href=""><h4>3分できる即席GitHubプロフィール</h4></a>
+            <div class="article-info">
+              <a href=""><img class="avatar" src="image/ed56cd21b4.jpeg" alt=""></a>
+              <a class="author-name" href=""><p>t_keshi</p></a>
+              <span>2022/09/03</span>
+              <div class="article-card-like-container">
+                <button class="like"><i class="fa-regular fa-heart "></i></button>
+                <span>236</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article-card">
+          <div class="article-card-left">
+            <span>🧜‍♀️</span>
+          </div>
+          <div class="article-card-right">
+            <a href="">
+              <h4>Zennが mermaid.js によるダイアグラム表記に対応したので試す</h4>
+            </a>
+            <div class="article-info">
+              <div class="blog-avatar">
+                <a href=""><img class="tech-blog" src="image/6399678e6b.png" alt=""></a>
+                <a class="position-right-bottom" href=""><img class="blog-avatar" src="image/ab27ada047.png" alt=""></a>
+              </div>
+              <a class="author-name" href="">
+                <p>waddy_u in Zenn Tech Blog</p>
+              </a>
+              <span>2021/06/08</span>
+              <div class="article-card-like-container">
+                <button class="like"><i class="fa-regular fa-heart "></i></button>
+                <span>63</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article-card">
+          <div class="article-card-left">
+            <span>🍣</span>
+          </div>
+          <div class="article-card-right">
+            <a href=""><h4>ZennのバッジをFastAPI+Vercelでお手軽に作る</h4></a>
+            <div class="article-info">
+              <a href=""><img class="avatar" src="image/36164a7e66.jpeg" alt=""></a>
+              <a class="author-name" href=""><p>ganyariya</p></a>
+              <span>2021/01/13</span>
+              <div class="article-card-like-container">
+                <button class="like"><i class="fa-regular fa-heart "></i></button>
+                <span>49</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article-card">
+          <div class="article-card-left">
+            <span>📝</span>
+          </div>
+          <div class="article-card-right">
+            <a href=""><h4>4ステップでGithubからZennに記事を公開してみる(トラブルシューティング付き)</h4></a>
+            <div class="article-info">
+              <a href=""><img class="avatar" src="image/2fdbf43e75.jpeg" alt=""></a>
+              <a class="author-name" href=""><p>オオバ@ohbashunsuke</p></a>
+              <span>2020/09/17</span>
+              <div class="article-card-like-container">
+                <button class="like"><i class="fa-regular fa-heart "></i></button>
+                <span>46</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-zenn">
+        <div class="footer-logo-container">
+          <img class="footer-logo" src="image/b52eac9e48.png" alt="">
+          <h2 class="footer-name">Zenn</h2>
+        </div>
+        <p>エンジニアのための <br class="footer-br">
+        情報共有コミュニティ</p>
+      </div>
+      <div class="footer-nav-container">
+        <nav class="footer-about-nav">
+          <h5>About</h5>
+          <ul>
+            <a href="">
+              <li>Zennについて</li>
+            </a>
+            <a href="">
+              <li>運営会社</li>
+            </a>
+            <a href="">
+              <li>お知らせ・リリース</li>
+            </a>
+          </ul>
+        </nav>
+        <nav class="footer-guide-nav">
+          <h5>Guides</h5>
+          <ul>
+            <a href="">
+              <li>使い方</li>
+            </a><a href="">
+              <li>Publication</li>
+            </a><a href="">
+              <li>よくある質問</li>
+            </a>
+          </ul>
+        </nav>
+        <nav class="footer-link-nav">
+          <h5>Links</h5>
+          <ul>
+            <a href="">
+              <li>Twitter</li>
+            </a><a href="">
+              <li>GitHub</li>
+            </a><a href="">
+              <li>メディアキット</li>
+            </a>
+          </ul>
+        </nav>
+        <nav class="footer-legal-nav">
+          <h5>Legal</h5>
+          <ul>
+            <a href="">
+              <li>利用規約</li>
+            </a><a href="">
+              <li>プライバシーポリシー</li>
+            </a><a href="">
+              <li>特商法表記</li>
+            </a>
+          </ul>
+        </nav>
+      </div>
+      <div style="width: 100%;">
+        <hr>
+      </div>
+      <div style="width: 100%; text-align: center;" class="classmethod">
+
+        <img style="width: 115px; margin: 10px 0px 30px 0px;" src="image/classmethod-logo-small.svg" alt="">
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
